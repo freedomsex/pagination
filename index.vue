@@ -4,6 +4,7 @@ export default {
   methods: {
     top() {
       global.scrollTo({top: 0, behavior: this.fast ? 'instant' : 'smooth'});
+      this.$emit('top');
     },
     next() {
       this.$emit('next');
@@ -57,6 +58,5 @@ export default {
   position: relative;
   padding: 0 @indent-sm;
   position: relative;
-  z-index: 0;
 }
 </style>

@@ -1,0 +1,22 @@
+{
+  "name": "@freedomsex/pagination",
+  "version": "1.0.0",
+  "description": "Pagination _vue_ widget for freedomsex project.",
+  "main": "index.vue",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "bulma": "^0.8.2",
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/freedomsex/login-activity.git"
+  },
+  "author": "tebaly <support@freedomsex.net>",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/freedomsex/login-activity/issues"
+  },
+  "homepage": "https://github.com/freedomsex/login-activity#readme"
+}
