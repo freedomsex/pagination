@@ -56,7 +56,5 @@ export default {
 <style lang="less">
 .pagination-widget {
   position: relative;
-  padding: 0 @indent-sm;
-  position: relative;
 }
 </style>
