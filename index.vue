@@ -1,6 +1,6 @@
 <script>
 export default {
-  props: ['fast'],
+  props: ['link', 'fast', 'onlyTop'],
   methods: {
     top() {
       global.scrollTo({top: 0, behavior: this.fast ? 'instant' : 'smooth'});
@@ -24,11 +24,21 @@ export default {
 
 <template>
   <nav class="level is-mobile pagination-widget">
-    <div class="level-left">
+    <div class="level-left" v-if="!onlyTop">
       <div class="field has-addons">
-        <p class="control">
-          <button class="button" @click="next()">Следующие</button>
-        </p>
+        <div class="control">
+          <button v-if="!link" class="button" @click="next()">
+            {{ $t('main.next') }}
+          </button>
+          <nuxt-link
+            v-else
+            :to="localePath(link)"
+            class="button"
+            @click.native="next()"
+          >
+            {{ $t('main.next') }}
+          </nuxt-link>
+        </div>
         <p class="control">
           <button class="button" @click="reload()">
             <i class="material-icons">replay</i>
@@ -41,6 +51,8 @@ export default {
         </p>
       </div>
     </div>
+    <div v-else></div>
+
     <div class="level-right">
       <div class="field">
         <p class="control">
@@ -56,5 +68,7 @@ export default {
 <style lang="less">
 .pagination-widget {
   position: relative;
+  padding: @indent-sm;
+  z-index: 0;
 }
 </style>
